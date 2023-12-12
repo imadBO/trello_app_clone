@@ -19,6 +19,11 @@ import 'member.dart' as _i9;
 import 'user.dart' as _i10;
 import 'workspace.dart' as _i11;
 import 'protocol.dart' as _i12;
+import 'package:trelloappclone_client/src/protocol/listboard.dart' as _i13;
+import 'package:trelloappclone_client/src/protocol/member.dart' as _i14;
+import 'package:trelloappclone_client/src/protocol/user.dart' as _i15;
+import 'package:trelloappclone_client/src/protocol/workspace.dart' as _i16;
+import 'package:trelloappclone_client/src/protocol/board.dart' as _i17;
 export 'activity.dart';
 export 'attachment.dart';
 export 'board.dart';
@@ -117,6 +122,27 @@ class Protocol extends _i1.SerializationManager {
       return (data != null
           ? (data as List).map((e) => deserialize<_i12.Member>(e)).toList()
           : null) as dynamic;
+    }
+    if (t == List<_i13.Listboard>) {
+      return (data as List).map((e) => deserialize<_i13.Listboard>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i14.Member>) {
+      return (data as List).map((e) => deserialize<_i14.Member>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i15.User>) {
+      return (data as List).map((e) => deserialize<_i15.User>(e)).toList()
+          as dynamic;
+    }
+    if (t == _i1.getType<List<_i16.Workspace>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<_i16.Workspace>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == List<_i17.Board>) {
+      return (data as List).map((e) => deserialize<_i17.Board>(e)).toList()
+          as dynamic;
     }
     return super.deserialize<T>(data, t);
   }
