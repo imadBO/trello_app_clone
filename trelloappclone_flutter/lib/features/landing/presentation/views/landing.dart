@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:trelloappclone_flutter/core/assets_manager.dart';
 import 'package:trelloappclone_flutter/core/colors_manager.dart';
+import 'package:trelloappclone_flutter/core/navigation_manager.dart';
+import 'package:trelloappclone_flutter/core/routes_manager.dart';
 import 'package:trelloappclone_flutter/core/strings_manager.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatelessWidget with NavigationManager {
   const LandingPage({super.key});
 
   @override
@@ -43,7 +45,9 @@ class LandingPage extends StatelessWidget {
                     height: 50,
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        pushPage(context, Routes.home);
+                      },
                       child: const Text(StringsManager.signup),
                     ),
                   ),
@@ -52,7 +56,9 @@ class LandingPage extends StatelessWidget {
                     height: 50,
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        pushPage(context, Routes.home);
+                      },
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(
                             width: 1.0, color: ColorsManager.brandColor),

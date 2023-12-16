@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trelloappclone_flutter/core/routes_manager.dart';
+import 'package:trelloappclone_flutter/core/themes_manager.dart';
 
 // // Sets up a singleton client object that can be used to talk to the server from
 // // anywhere in our app. The client is generated from your server code.
@@ -21,9 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Trello Clone',
-      theme: ThemeData(
-        useMaterial3: false,
-        primarySwatch: Colors.blue,
+      theme: ThemesManager.lightTheme.copyWith(
         textTheme: Theme.of(context).textTheme.apply(
               fontFamily: GoogleFonts.poppins().fontFamily,
             ),
